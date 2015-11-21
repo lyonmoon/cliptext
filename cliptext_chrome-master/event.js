@@ -1,14 +1,35 @@
 
 
+//이거하면 우클릭
+// callback function
+function onItemClick(info, tab){
+	// Inject the content script into the current page
+	chrome.tabs.executeScript(null, { file: 'content.js' });
+}
+function onItemClick2(info, tab){
+	// Inject the content script into the current page
+	chrome.tabs.executeScript(null, { file: 'content2.js' });
+}
 
+var context = "selection";
+var title = "Term Frequency";
+var id = chrome.contextMenus.create({"title": title, "contexts": [context], "onclick": onItemClick});
 
+// var context2 = "selection2";
+var title2 = "Log-Freuquency";
+var id = chrome.contextMenus.create({"title": title2, "contexts": [context], "onclick": onItemClick2});
 
-//이거하면 오클릭
-// // callback function
-// function onItemClick(info, tab){
-// 	// Inject the content script into the current page
-// 	chrome.tabs.executeScript(null, { file: 'content.js' });
-// }
+var title3 = "Inverse Document Frequency";
+var id = chrome.contextMenus.create({"title": title3, "contexts": [context], "onclick": onItemClick});
+
+var title4 = "TF-IDF";
+var id = chrome.contextMenus.create({"title": title4, "contexts": [context], "onclick": onItemClick});
+
+var title5 = "HTML-Tag";
+var id = chrome.contextMenus.create({"title": title5, "contexts": [context], "onclick": onItemClick});
+
+var title6 = "Extra Method...";
+var id = chrome.contextMenus.create({"title": title6, "contexts": [context], "onclick": onItemClick});
 
 
 // var getName =function(){
@@ -29,27 +50,27 @@
 // })
 
 
-// //form, onclick
-// var analyze = document.getElementById('submit_button');
-// analyze.addEventListener('click', function(){
+// //form, onclick, radio box test
+var testBtn = document.getElementById('test_btn');
+testBtn.addEventListener('click', function(){
 
-// 	chrome.tabs.executeScript(null, { file: 'content.js' });
+	// chrome.tabs.executeScript(null, { file: 'content.js' });
 
-// 	// var obj = document.getElementsByName("alg");
-// 	// for(var i=0; i<obj.length;i++){
-// 	// 	// alert(obj[i].value + " : "+ obj[i].checked);
-// 	// 	if(obj[i].checked)
-// 	// 	{
-// 	// 		// confirm(obj[i].value);
-// 	// 		// alert(obj[i].value);
-// 	// 		// chrome.tabs.executeScript(null, { file: 'content.js' });
-// 	// 	}
-// 	// }
-// 	// Inject the content script into the current page
-//     // document.getElementById("u_score_value").value =
-//     // document.getElementById("mw-content-text").firstChild.data;
-// 	// chrome.tabs.executeScript(null, { file: 'content.js' });
-// })
+	var obj = document.getElementsByName("alg");
+	for(var i=0; i<obj.length;i++){
+		// alert(obj[i].value + " : "+ obj[i].checked);
+		if(obj[i].checked)
+		{
+			// confirm(obj[i].value);
+			// alert(obj[i].value);
+			chrome.tabs.executeScript(null, { file: 'content.js' });
+		}
+	}
+	// Inject the content script into the current page
+ //    document.getElementById("u_score_value").value =
+ //    document.getElementById("mw-content-text").firstChild.data;
+	// chrome.tabs.executeScript(null, { file: 'content.js' });
+})
 
 
 //in the popup page, onclick
@@ -81,7 +102,7 @@ analyze.addEventListener('click', function(){
 
 
 
-//라디오박스 정보 메시지에 추가
+//라디오박스 정보 메시지에 추가, in the str
 // str="";
 // var obj = document.getElementsByName("alg");
 // for(var i=0; i<obj.length;i++){
@@ -129,10 +150,10 @@ chrome.runtime.onMessage.addListener(function(message){
 	}
 });
 
-var context = "selection";
-var title = "Share with Cliptext!0";
+// var context = "selection";
+// var title = "Share with Cliptext!0";
 // var id = chrome.contextMenus.create({"title": title, "contexts": [context], "onclick": onItemClick});
 
-var context2 = "selection2";
-var title2 = "Share with Cliptext!2";
+// var context2 = "selection2";
+// var title2 = "Share with Cliptext!2";
 // var id = chrome.contextMenus.create({"title": title2, "contexts": [context], "onclick": onItemClick});
