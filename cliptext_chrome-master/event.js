@@ -36,5 +36,9 @@ chrome.runtime.onMessage.addListener(function(message){
 });
 
 var context = "selection";
-var title = "Share with Cliptext!";
+var title = "Share with Cliptext!0";
 var id = chrome.contextMenus.create({"title": title, "contexts": [context], "onclick": onItemClick});
+
+var context2 = "selection2";
+var title2 = "Share with Cliptext!2";
+var id = chrome.contextMenus.create({"title": title2, "contexts": [context], "onclick": onItemClick});
