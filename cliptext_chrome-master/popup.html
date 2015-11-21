@@ -2,6 +2,35 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<style>
+			#container{
+				width:240px;
+				height:180px;
+				background:#ebeff9;
+				border-top:1px solid #b5c7de;
+				font-size:99%;
+				padding:3px 0 2px 5px;
+				font-weight:bold;
+				margin-bottom:1em;
+				margin-top:1em;
+				text-align:left;
+			}
+			#title{
+				font-size: sans serif;
+			}
+			label {
+				font: sans-serif;
+			}
+			label:hover {
+				text-decoration:underline;
+				color:blue;
+			}
+			input:hover {
+
+				text-decoration: underline;
+				color:orange;
+			}
+		</style>
 
 
 		<style>
@@ -32,9 +61,76 @@
 </form> -->
 	
 
+	<div id="container">
+		<span id="title">Select algorithm</span>
+
+		<br><br>
+
+		<!-- <form> -->
+		<form method="POST" action="welcome.php" target="_blank" onsubmit="copySpanConte">
+
+			<!-- wrapped <input> tag with <label> tag in order to make text, along with radio button, is clickable -->
+			<label>
+		  		<input type="radio" name="alg" value="CF" checked> Term Frequency (TF)
+			</label>
+
+			  	<br>
+
+			<label>
+		  		<input type="radio" name="alg" value="LF"> Log-Freuquency (LF)
+		  	</label>
+
+		  		<br>
+
+			<label>
+				<input type="radio" name="alg" value="DF"> Document Frequency (DF)
+			</label>
+
+			    <br>
+
+			<label>
+				<input type="radio" name="alg" value="IDF"> Inverse Document Frequency (IDF)
+			</label>
+
+				<br>
+
+			<label>
+	  		    <input type="radio" name="alg" value="TF-IDF"> TF-IDF
+	  		</label>
+
+	  			<br>
+
+	  		<label>
+			    <input type="radio" name="alg" value="HT"> HTML-Tag (HT)
+			</label>
+
+			  <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  <input type="hidden" name="u_score_value" id="u_score_value">
+		  <button type="submit">submit</button>
+
+
+		  <!-- <input type="submit" value="Submit"> -->
+
+
+		</form>
+	</div>
 
  
     <script type="text/javascript" src="event.js"></script>
 
 	</body>
 </html>
+

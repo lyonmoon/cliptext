@@ -1,9 +1,18 @@
+
+//이거하면 오클릭
 // // callback function
 // function onItemClick(info, tab){
 // 	// Inject the content script into the current page
 // 	chrome.tabs.executeScript(null, { file: 'content.js' });
 // }
 
+
+function copySpanContent() {
+    document.getElementById("u_score_value").value =
+    document.getElementById("mw-content-text").firstChild.data;
+}
+
+//in the popup page, onclick
 var analyze = document.getElementById('analyze');
 analyze.addEventListener('click', function(){
     // alert('Hello world');
