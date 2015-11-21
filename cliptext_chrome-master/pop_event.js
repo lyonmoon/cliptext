@@ -32,19 +32,19 @@
 // });
 
 
-var analyze = document.getElementById('analyze');
-analyze.addEventListener('click', function(){
-    // alert('Hello world');
-	// Inject the content script into the current page
-	chrome.tabs.executeScript(null, { file: 'content.js' });
-})
-
-
-// // callback function
-// function onItemClick(info, tab){
+// var analyze = document.getElementById('analyze');
+// analyze.addEventListener('click', function(){
+//     // alert('Hello world');
 // 	// Inject the content script into the current page
 // 	chrome.tabs.executeScript(null, { file: 'content.js' });
-// }
+// })
+
+
+// callback function
+function onItemClick(info, tab){
+	// Inject the content script into the current page
+	chrome.tabs.executeScript(null, { file: 'content.js' });
+}
 
 // Perform the callback when a message is received from the content script
 chrome.runtime.onMessage.addListener(function(message){
@@ -78,5 +78,7 @@ chrome.runtime.onMessage.addListener(function(message){
 });
 
 var context = "selection";
-var title = "Share with Cliptext!";
-// var id = chrome.contextMenus.create({"title": title, "contexts": [context], "onclick": onItemClick});
+var title_p = "Share with Cliptext!_popup";
+var id = chrome.contextMenus.create({"title": title_p, "contexts": [context], "onclick": onItemClick});
+
+
