@@ -45,21 +45,9 @@
 	</head>
 	<body>
 		<a href="http://www.cliptext.co" target="_blank">Go to K-Visualizer!</a>
-		<!-- <button onclick="pop_event.js">analyze</button> -->
-    
-
-    <!-- <input type="button" id="hw" value="analyze_11" "onclick": onItemClick/> -->
-
-	<!-- <button onclick= "onItemClick"/>Analyze it!!</button> -->
-	<button id="analyze"/>Analyze it!!</button>
+		<button id="analyze"/>Analyze it!!</button>
 
 
-
-<!-- <form id="target" action="result.html">
-    <label for="name">name</label> <input id="name" type="name" />
-    <input type="submit" />
-</form> -->
-	
 
 	<div id="container">
 		<span id="title">Select algorithm</span>
@@ -67,11 +55,11 @@
 		<br><br>
 
 		<!-- <form> -->
-		<form method="POST" action="welcome.php" target="_blank" onsubmit="copySpanConte">
+		<!-- <form method="POST" action="welcome.php" target="_blank" onsubmit="copySpanConte"> -->
 
 			<!-- wrapped <input> tag with <label> tag in order to make text, along with radio button, is clickable -->
 			<label>
-		  		<input type="radio" name="alg" value="CF" checked> Term Frequency (TF)
+		  		<input type="radio" name="alg" value="TF"> Term Frequency (TF)
 			</label>
 
 			  	<br>
@@ -106,27 +94,19 @@
 
 			  <br><br>
 
-
-
-
-
-
-
-
-
-
-
-
-
 		  <input type="hidden" name="u_score_value" id="u_score_value">
-		  <button type="submit">submit</button>
 
+		  <!-- <button type="submit">submit</button> -->
+
+		  <button type="button" id="test_btn" >test</button>
+
+		  <button type="submit" id="submit_button">submit</button>
 
 		  <!-- <input type="submit" value="Submit"> -->
-
-
-		</form>
+		<!-- </form> -->
 	</div>
+
+	
 
  
     <script type="text/javascript" src="event.js"></script>

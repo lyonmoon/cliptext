@@ -25,7 +25,7 @@ for(var i = 0; i < wordSort.length; i++){
 // Send a message containing the selected text and page url back to the event (background) page
 chrome.runtime.sendMessage({
 	'action': 'submit the form',
-	'url': window.location.href,
+	'url': window.location.href ,
 	'selectedText' : str
 	// 'selectedText' : window.document.getElementsByTagName('html')[0].innerText
 	// 'selectedText' : window.document.childNodes[1].innerText

@@ -4,3 +4,4 @@
                               <input type=submit value="전송">  
 	<!--값을 기본적으로 전송하는 기능을 갖고 있다. 한 form 태그 안에 한 submit-->
 </form>	
+
