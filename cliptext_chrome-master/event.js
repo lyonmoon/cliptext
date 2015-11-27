@@ -121,7 +121,7 @@ chrome.runtime.onMessage.addListener(function(message){
 	if (message.action == 'submit the form'){
 		//message should contain the selected text and url - ensure that this is the correct message
 		var url = "data:text/html;charset=utf8,";
-		
+
 		function append(key, value){
 			var input = document.createElement('textarea');
 			input.setAttribute('name', key);
@@ -131,12 +131,15 @@ chrome.runtime.onMessage.addListener(function(message){
 		
 		var form = document.createElement('form');
 		form.method = 'POST';
-		form.action = 'http://www.cliptext.co/clipr.php';
-
-		// form.action = 'http://localhost:8080/clipr.php';
+		// form.action = 'http://www.cliptext.co/clipr.php';
+		// form.action = 'http://localhost:80/clipr.php';
+		form.action = 'http://localhost:80/visualizer.php';
 		// form.action = 'http://localhost/cliptext/clipr.php';
 		form.style.visibility = "hidden";
-		append('url', message.url);
+
+		// append('url', message.url);
+
+
 		append('text', message.selectedText);
 
 		
@@ -146,6 +149,7 @@ chrome.runtime.onMessage.addListener(function(message){
 		
 		url = url + encodeURIComponent(form.outerHTML);
 		url = url + encodeURIComponent('<script>document.forms[0].submit();</script>');
+		// chrome.tabs.create({url: url, active: true});
 		chrome.tabs.create({url: url, active: true});
 	}
 });

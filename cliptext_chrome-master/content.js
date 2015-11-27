@@ -16,9 +16,11 @@ for(var name in wordSortTable){
 }
 wordSort.sort(function(a, b) {return b[1] - a[1]});
 wordSort = wordSort.slice(0, 40);
-str = 'WordCounter.js\n';
+// str = 'WordCount.js\n';
+str = '\n';
 for(var i = 0; i < wordSort.length; i++){
-    str += wordSort[i][1] +", "+ wordSort[i][0] + "\n";
+    // str += wordSort[i][1] +", "+ wordSort[i][0] + "\n";
+    str += wordSort[i][0] +":"+ wordSort[i][1] + "<br>";
 }
 // alert(str);
 
