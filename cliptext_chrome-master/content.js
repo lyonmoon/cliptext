@@ -29,10 +29,6 @@ chrome.runtime.sendMessage({
 	'action': 'submit the form',
 	'url': window.location.href ,
 	'selectedText' : str
-	// 'selectedText' : window.document.getElementsByTagName('html')[0].innerText
-	// 'selectedText' : window.document.childNodes[1].innerText
-
-	// 'selectedText' : window.document.childNodes[1].innerHTML
 
 
 });
