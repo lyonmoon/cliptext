@@ -131,10 +131,9 @@ chrome.runtime.onMessage.addListener(function(message){
 		
 		var form = document.createElement('form');
 		form.method = 'POST';
-		form.action = 'http://www.cliptext.co/clipr.php';
-		
+		// form.action = 'http://www.cliptext.co/clipr.php';
 		// form.action = 'http://localhost:80/clipr.php';
-		// form.action = 'http://localhost:80/visualizer.php';
+		form.action = 'http://localhost:80/visualizer.php';
 		// form.action = 'http://localhost/cliptext/clipr.php';
 		form.style.visibility = "hidden";
 
